@@ -53,7 +53,7 @@ while folderList.size != 0 do
 	nowuniqid = folderList.pop
 	start = 1
 	filenum = 100 # 仮で入れる
-	while filenum >= start do
+	while filenum >= start do # TODO:>=で良いのかちゃんと確かめてない
 		#そのフォルダ内のファイルのリストが書かれたJSONを取得する
 		urlstr = "https://box.yahoo.co.jp/api/v1/filelist/" + sid + "/" + nowuniqid + "?_=" + DateTime.now.strftime('%Q').to_s + "&"
 		urlstr << "results=#{filenum_of_page}&start=#{start}&output=json&sort=%2Bname&filetype=both&meta=1&thumbnail=1&tree=1&sharemembercount=1&ownerinfo=1&boxcrumb="
